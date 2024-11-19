@@ -34,6 +34,19 @@ class Parchis:
         print(resultado)
 
         return resultado
-
-bruh = Parchis("Tony", "Sara")
-bruh.pintaTablero()
+    
+    def avanzaPosiciones(numeroJugador):
+        parchisObj = Parchis("test1","test2")
+        parchisObj.tiraDados()
+        if numeroJugador == 1:
+            parchisObj.fichaJ1 += parchisObj.dado1 + parchisObj.dado2
+            if parchisObj.fichaJ1 > parchisObj.TAM_TABLERO:
+                parchisObj.fichaJ1 = parchisObj.TAM_TABLERO
+                parchisObj.fichaJ1 -= parchisObj.dado1 + parchisObj.dado2
+                parchisObj.fichaJ1 -= 1
+        elif numeroJugador == 2:
+            parchisObj.fichaJ2 += parchisObj.dado1 + parchisObj.dado2
+            if parchisObj.fichaJ2 > parchisObj.TAM_TABLERO:
+                parchisObj.fichaJ2 = parchisObj.TAM_TABLERO
+                parchisObj.fichaJ2 -= parchisObj.dado1 + parchisObj.dado2
+                parchisObj.fichaJ2 -= 1
